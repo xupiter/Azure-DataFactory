@@ -21,7 +21,7 @@ function Install-Gateway([string] $gwPath)
 
     Write-Host "Start Microsoft Integration Runtime installation"
     
-    $process = Start-Process "msiexec.exe" "/i $path /quiet /passive" -Wait -PassThru
+    $process = Start-Process "msiexec.exe" "/i $gwPath /quiet /passive" -Wait -PassThru
     if ($process.ExitCode -ne 0)
     {
         throw "Failed to install Microsoft Integration Runtime. msiexec exit code: $($process.ExitCode)"
